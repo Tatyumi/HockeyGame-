@@ -11,9 +11,11 @@ public class PlayGenerator : MonoBehaviour {
     GameObject judagePanel;
     GameObject againPanel;
     GameObject ball;
-
+    /// <summary>プレイヤー1のスコア</summary>
     public int score1;
+    /// <summary>プレイヤー2のスコア</summary>
     public int score2;
+    /// <summary>目標スコア</summary>
     public int mNum;
 
     // Use this for initialization
@@ -31,7 +33,9 @@ public class PlayGenerator : MonoBehaviour {
         mNum = TitleDirector.matchNum;
     }
 	
-    // プレイヤー1にスコア加算
+    /// <summary>
+    /// プレイヤー１のスコア加算
+    /// </summary>
 	public void addScore_p1()
     {
         score1 += 1;
@@ -39,7 +43,9 @@ public class PlayGenerator : MonoBehaviour {
         judage(score1,score2);
     }
 
-    // プレイヤー2にスコア加算
+    /// <summary>
+    /// プレイヤー2のスコア加算
+    /// </summary>
     public void addScore_p2()
     {
         score2 += 1;
@@ -47,7 +53,11 @@ public class PlayGenerator : MonoBehaviour {
         judage(score1,score2);
     }
 
-    // 勝敗判定
+    /// <summary>
+    /// 両スコアが目標スコアに達した時の判定処理
+    /// </summary>
+    /// <param name="score1"></param>
+    /// <param name="score2"></param>
     public void judage(int score1,int score2)
     {
         // プレーヤー1が勝利した場合
@@ -62,26 +72,29 @@ public class PlayGenerator : MonoBehaviour {
             this.judagePanel.transform.localPosition = new Vector3(0, 0, 0);
             Destroy(this.ball);
         }
-        //this.judagePanel.transform.localPosition = new Vector3(0, 0, 0);
-
-
     }
-
-    // アゲインパネル表示
+    
+    /// <summary>
+    /// コンテニューパネルの表示
+    /// </summary>
     public void againMove() {
 
         this.againPanel.transform.localPosition = new Vector3(0, 0, 0);
 
         Destroy(this.judagePanel);
     }
-
-    // タイトル画面に遷移
+    
+    /// <summary>
+    /// タイトルシーンに遷移
+    /// </summary>
     public void titleMove()
     {
         SceneManager.LoadScene("TitleScene");
     }
 
-    // ゲーム再プレイ
+    /// <summary>
+    /// VSシーンに遷移
+    /// </summary>
     public void playAgain()
     {
         SceneManager.LoadScene("VsScene");

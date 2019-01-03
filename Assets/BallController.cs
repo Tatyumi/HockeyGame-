@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BallController : MonoBehaviour {
-
-    public Rigidbody2D rb ;
-    public int a = 1;
+public class BallController : MonoBehaviour
+{
+    /// <summary></summary>
+    //public Rigidbody2D rb;
+    /// <summary></summary>
+    //public int a = 1;
+    /// <summary></summary>
     public float xR;
+    /// <summary></summary>
     public float yR;
-    // Use this for initialization
+    /// <summary>ボール生成オブジェクト</summary>
     GameObject generator;
+    /// <summary>開始ボタン</summary>
     GameObject startButton;
 
     //GameObject generator = GameObject.Find("PlayGenerator");
@@ -21,45 +26,59 @@ public class BallController : MonoBehaviour {
         this.startButton.transform.localPosition = new Vector3(0, 0, 0);
     }
 
-
+    /// <summary>
+    /// ゲーム開始処理
+    /// </summary>
     public void gameStart()
     {
-
+        //ボール初期位置に配置
         this.transform.localPosition = new Vector3(0, 0, 0);
+        //ボールの移動方向
         xR = Random.Range(-8, 8);
         yR = Random.Range(-8, 8);
-        
+
         //  rb = GetComponent<Rigidbody2D>();
         //    rb.AddForce((transform.up + transform.right)*10000.0f);
-        if (-2 < xR && xR< 2){
+
+        if (-2 < xR && xR < 2)
+        {
             gameStart();
         }
-        else if(-2 < xR && xR < 2)
+        else if (-2 < xR && xR < 2)
         {
             gameStart();
         }
         this.startButton.transform.localPosition = new Vector3(0, 450, 0);
 
     }
-    void Update(){
-        this.transform.Translate(xR,yR,0);
-        if(yR == 0)
+
+    void Update()
+    {
+        this.transform.Translate(xR, yR, 0);
+
+        //Y方向の移動量が0の場合
+        if (yR == 0)
         {
             yR += 3;
         }
     }
-	
 
-    void OnTriggerEnter2D(Collider2D other) {
-        
+    /// <summary>
+    /// 衝突したオブジェクトの判別
+    /// </summary>
+    /// <param name="other"></param>
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        //衝突したオブジェクトの判別
         if (other.gameObject.tag == "Player1")
         {
             //x軸に方向の反転
-            xR = xR *-1 + 2.0f;
-            if(this.transform.localPosition.y > 0)
+            xR = xR * -1 + 2.0f;
+            if (this.transform.localPosition.y > 0)
             {
                 yR += 1;
-            }else if (this.transform.localPosition.y < 0)
+            }
+            else if (this.transform.localPosition.y < 0)
             {
                 yR -= 1;
             }
@@ -79,21 +98,16 @@ public class BallController : MonoBehaviour {
         }
         else if (other.gameObject.tag == "Wall")
         {//y軸の方向の反転
-         //rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y );
             yR *= -1;
         }
-        else if(other.gameObject.tag == "Goal1")
+        else if (other.gameObject.tag == "Goal1")
         {
-           // GameObject generator = GameObject.Find("PlayGenerator");
             generator.GetComponent<PlayGenerator>().addScore_p2();
-            //Destroy(this.gameObject);
             gameStart();
         }
         else if (other.gameObject.tag == "Goal2")
         {
-          //  GameObject generator = GameObject.Find("PlayGenerator");
             generator.GetComponent<PlayGenerator>().addScore_p1();
-            // Destroy(this.gameObject);
             gameStart();
         }
     }

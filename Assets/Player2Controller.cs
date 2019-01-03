@@ -3,8 +3,9 @@ using System.Collections;
 
 public class Player2Controller : MonoBehaviour {
 
+    /// <summary>移動量</summary>
     private int move = 0;
-
+    /// <summary>移動速度</summary>
     private float speed = 10.0f;
 
 
@@ -23,6 +24,7 @@ public class Player2Controller : MonoBehaviour {
                 break;
         }
 
+        //プレイヤー2のY座標が185~-185外の場合
         if(this.transform.localPosition.y >= 185)
         {
             this.transform.localPosition = new Vector3(transform.localPosition.x, 180, 0);
@@ -32,16 +34,26 @@ public class Player2Controller : MonoBehaviour {
             this.transform.localPosition = new Vector3(transform.localPosition.x, -180, 0);
         }
     }
-
+    
+    /// <summary>
+    /// プレイヤー2が上に移動
+    /// </summary>
     public void UpMove2()
     {
         move = 1;
     }
 
+    /// <summary>
+    /// プレイヤー2が下に移動
+    /// </summary>
     public void DownMove2()
     {
         move = 2;
     }
+
+    /// <summary>
+    /// プレイヤー2が停止
+    /// </summary>
     public void ZeroMove2()
     {
         move = 0;
