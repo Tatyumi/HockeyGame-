@@ -4,10 +4,6 @@ using System.Collections;
 public class BallController : MonoBehaviour
 {
     /// <summary></summary>
-    //public Rigidbody2D rb;
-    /// <summary></summary>
-    //public int a = 1;
-    /// <summary></summary>
     public float xR;
     /// <summary></summary>
     public float yR;
@@ -19,7 +15,6 @@ public class BallController : MonoBehaviour
     //GameObject generator = GameObject.Find("PlayGenerator");
     void Start()
     {
-
         this.generator = GameObject.Find("PlayGenerator");
         this.startButton = GameObject.Find("StartPanel");
 
@@ -29,27 +24,23 @@ public class BallController : MonoBehaviour
     /// <summary>
     /// ゲーム開始処理
     /// </summary>
-    public void gameStart()
+    public void GameStart()
     {
         //ボール初期位置に配置
         this.transform.localPosition = new Vector3(0, 0, 0);
         //ボールの移動方向
         xR = Random.Range(-8, 8);
         yR = Random.Range(-8, 8);
-
-        //  rb = GetComponent<Rigidbody2D>();
-        //    rb.AddForce((transform.up + transform.right)*10000.0f);
-
+        
         if (-2 < xR && xR < 2)
         {
-            gameStart();
+            GameStart();
         }
         else if (-2 < xR && xR < 2)
         {
-            gameStart();
+            GameStart();
         }
         this.startButton.transform.localPosition = new Vector3(0, 450, 0);
-
     }
 
     void Update()
@@ -103,12 +94,12 @@ public class BallController : MonoBehaviour
         else if (other.gameObject.tag == "Goal1")
         {
             generator.GetComponent<PlayGenerator>().addScore_p2();
-            gameStart();
+            GameStart();
         }
         else if (other.gameObject.tag == "Goal2")
         {
             generator.GetComponent<PlayGenerator>().addScore_p1();
-            gameStart();
+            GameStart();
         }
     }
 }
