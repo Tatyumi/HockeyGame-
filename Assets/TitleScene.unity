@@ -621,7 +621,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 567283918}
-        m_MethodName: p_Push1
+        m_MethodName: SelectOnepointmuch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -743,7 +743,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 567283918}
-        m_MethodName: p_Push5
+        m_MethodName: SelectFivepointmuch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1013,7 +1013,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 567283918}
-        m_MethodName: p_Push3
+        m_MethodName: SelectThreepointmuch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1274,7 +1274,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 567283918}
-        m_MethodName: VsSceneMove
+        m_MethodName: DisplayarrangePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

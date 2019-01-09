@@ -1,29 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour {
-
-    /// <summary>移動量</summary>
-    private int move = 0;
+public class PlayerController : MonoBehaviour
+{
     /// <summary>移動速度</summary>
     private float speed = 10.0f;
-
+    /// <summary>上に移動ボタン押下判別</summary>
+    private bool isMoveUp = false;
+    /// <summary>下に移動ボタン押下判別</summary>
+    private bool isMoveDown = false;
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
 
-        switch (move)
+        //上に移動ボタンが押されている場合
+        if (isMoveUp)
         {
-            case 1:
-                this.transform.position = new Vector3(transform.position.x, transform.position.y + speed, 0);
-                break;
-
-            case 2:
-                this.transform.position = new Vector3(transform.position.x, transform.position.y - speed, 0);
-                break;
+            this.transform.position = new Vector3(transform.position.x, transform.position.y + speed, 0);
         }
 
-        //プレイヤー1のY座標が185~-185外の場合
+        //下に移動ボタンが押されている場合
+        if (isMoveDown)
+        {
+            this.transform.position = new Vector3(transform.position.x, transform.position.y - speed, 0);
+        }
+
+        //プレイヤーのY座標が185~-185外の場合
         if (this.transform.localPosition.y >= 185)
         {
             this.transform.localPosition = new Vector3(transform.localPosition.x, 180, 0);
@@ -35,25 +38,35 @@ public class PlayerController : MonoBehaviour {
     }
 
     /// <summary>
-    /// プレイヤー1が上に移動
+    /// 上に移動ボタンを押す
     /// </summary>
-    public void UpMove() {
-        move = 1;
+    public void PushDownMoveUp()
+    {
+        isMoveUp = true;
     }
 
     /// <summary>
-    /// プレイヤー1が下に移動
+    /// 上に移動ボタンを離す
     /// </summary>
-    public void DownMove()
+    public void PushUpMoveUp()
     {
-        move = 2;
+        isMoveUp = false;
     }
 
     /// <summary>
-    /// プレイヤー1が停止
+    /// 下に移動ボタンを押す
     /// </summary>
-    public void ZeroMove()
+    public void PushDownMoveDown()
     {
-        move = 0;
+        isMoveDown = true;
     }
+
+    /// <summary>
+    /// 下に移動ボタンを離す
+    /// </summary>
+    public void PushUpMoveDown()
+    {
+        isMoveDown = false;
+    }
+
 }
