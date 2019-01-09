@@ -690,8 +690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67df6bbee06a72a44973164a67bb5d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  a: 1
   xR: 0
   yR: 0
 --- !u!1 &325376789
@@ -1068,8 +1066,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 846868345}
-          m_MethodName: DownMove2
+        - m_Target: {fileID: 846868348}
+          m_MethodName: DownMove
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1085,8 +1083,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 846868345}
-          m_MethodName: ZeroMove2
+        - m_Target: {fileID: 846868348}
+          m_MethodName: ZeroMove
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1138,7 +1136,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1103037802}
+      - m_Target: {fileID: 846868348}
         m_MethodName: DownMove
         m_Mode: 1
         m_Arguments:
@@ -1975,6 +1973,7 @@ GameObject:
   - component: {fileID: 846868346}
   - component: {fileID: 846868344}
   - component: {fileID: 846868345}
+  - component: {fileID: 846868348}
   m_Layer: 5
   m_Name: Player2
   m_TagString: Player2
@@ -2031,7 +2030,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 846868342}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc43631f917a8e144ba0e3237e2158cc, type: 3}
   m_Name: 
@@ -2069,6 +2068,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 846868342}
+--- !u!114 &846868348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 846868342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdb5007d91f8dd4d8e86d60458ccf03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1103037798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,8 +2673,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 846868345}
-          m_MethodName: UpMove2
+        - m_Target: {fileID: 846868348}
+          m_MethodName: UpMove
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2680,8 +2690,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 846868345}
-          m_MethodName: ZeroMove2
+        - m_Target: {fileID: 846868348}
+          m_MethodName: ZeroMove
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2733,7 +2743,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1103037802}
+      - m_Target: {fileID: 846868348}
         m_MethodName: UpMove
         m_Mode: 1
         m_Arguments:
