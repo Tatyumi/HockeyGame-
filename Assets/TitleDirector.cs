@@ -16,27 +16,27 @@ public class TitleDirector : MonoBehaviour {
     }
 
     /// <summary>
-    /// １ポイントマッチ
+    /// １ポイントマッチを選択
     /// </summary>
-    public void p_Push1()
+    public void SelectOnepointmuch()
     {
         matchNum = 1;
         SceneManager.LoadScene("VsScene");
     }
 
     /// <summary>
-    /// 3ポイントマッチ
+    /// 3ポイントマッチを選択
     /// </summary>
-    public void p_Push3()
+    public void SelectThreepointmuch()
     {
         matchNum = 3;
         SceneManager.LoadScene("VsScene");
     }
 
     /// <summary>
-    /// 5ポイントマッチ
+    /// 5ポイントマッチを選択
     /// </summary>
-    public void p_Push5()
+    public void SelectFivepointmuch()
     {
         matchNum = 5;
         SceneManager.LoadScene("VsScene");
@@ -45,7 +45,7 @@ public class TitleDirector : MonoBehaviour {
     /// <summary>
     /// ゲーム設定パネル表示
     /// </summary>
-    public void vssceneMove()
+    public void DisplayarrangePanel()
     {
         this.arrangePanel.transform.localPosition = new Vector3(0, -100, 0);
     }
