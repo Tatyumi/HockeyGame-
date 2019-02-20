@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 63250626}
   - component: {fileID: 63250625}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: NoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1961178027}
-        m_MethodName: titleMove
+        m_MethodName: TitleSceneMove
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -692,6 +692,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xR: 0
   yR: 0
+  PlayGenerator: {fileID: 1961178025}
+  StartPanel: {fileID: 1264152716}
 --- !u!1 &325376789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1290,7 @@ GameObject:
   - component: {fileID: 418734251}
   - component: {fileID: 418734250}
   m_Layer: 5
-  m_Name: Button
+  m_Name: YesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1353,7 +1355,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1961178027}
-        m_MethodName: playAgain
+        m_MethodName: VsSceneMove
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1901,7 +1903,7 @@ GameObject:
   - component: {fileID: 792028476}
   - component: {fileID: 792028475}
   m_Layer: 5
-  m_Name: AgainPanel
+  m_Name: CountinuePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2353,7 +2355,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1961178027}
-        m_MethodName: againMove
+        m_MethodName: CountinuePanelDisplay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3002,7 +3004,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 281067047}
-        m_MethodName: gameStart
+        m_MethodName: GameStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3087,6 +3089,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6cbb51837b50554da3bb5ed16e6c1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerText1: {fileID: 473805376}
+  PlayerText2: {fileID: 540702545}
+  JudagePanel: {fileID: 1365913569}
+  AgainPanel: {fileID: 792028473}
+  Ball: {fileID: 281067041}
   score1: 0
   score2: 0
-  mNum: 0
+  MatchPoint: 0
