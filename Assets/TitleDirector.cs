@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class TitleDirector : MonoBehaviour {
 
     /// <summary>目標スコア</summary>
-    public static int matchNum = 0;
+    public static int MatchNum = 0;
 
     GameObject arrangePanel;
 
@@ -20,7 +20,7 @@ public class TitleDirector : MonoBehaviour {
     /// </summary>
     public void SelectOnepointmuch()
     {
-        matchNum = 1;
+        MatchNum = 1;
         SceneManager.LoadScene("VsScene");
     }
 
@@ -29,7 +29,7 @@ public class TitleDirector : MonoBehaviour {
     /// </summary>
     public void SelectThreepointmuch()
     {
-        matchNum = 3;
+        MatchNum = 3;
         SceneManager.LoadScene("VsScene");
     }
 
@@ -38,7 +38,7 @@ public class TitleDirector : MonoBehaviour {
     /// </summary>
     public void SelectFivepointmuch()
     {
-        matchNum = 5;
+        MatchNum = 5;
         SceneManager.LoadScene("VsScene");
     }
 
