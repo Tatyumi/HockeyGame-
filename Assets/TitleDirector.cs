@@ -6,12 +6,11 @@ public class TitleDirector : MonoBehaviour {
 
     /// <summary>目標スコア</summary>
     public static int MatchNum = 0;
-
-    GameObject arrangePanel;
+    /// <summary>セッティングパネル</summary>
+    public GameObject SettingPanel;
 
     void Start()
     {
-        this.arrangePanel = GameObject.Find("ArrangePanel");
         DontDestroyOnLoad(this);
     }
 
@@ -47,6 +46,6 @@ public class TitleDirector : MonoBehaviour {
     /// </summary>
     public void DisplayarrangePanel()
     {
-        this.arrangePanel.transform.localPosition = new Vector3(0, -100, 0);
+        this.SettingPanel.transform.localPosition = new Vector3(0, -100, 0);
     }
 }
