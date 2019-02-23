@@ -27,7 +27,7 @@ public class TitleDirector : MonoBehaviour {
     /// <summary>
     /// ゲーム設定パネル表示
     /// </summary>
-    public void DisplayarrangePanel()
+    public void DisplaySettingPanel()
     {
         this.SettingPanel.transform.localPosition = new Vector3(0, -100, 0);
     }

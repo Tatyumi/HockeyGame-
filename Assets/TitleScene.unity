@@ -1303,7 +1303,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 567283918}
-        m_MethodName: DisplayarrangePanel
+        m_MethodName: DisplaySettingPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
