@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Common;
 
 public class BallController : MonoBehaviour
 {
@@ -9,37 +10,22 @@ public class BallController : MonoBehaviour
     public float BallYRange;
     /// <summary>ボール生成オブジェクト</summary>
     public GameObject PlayGenerator;
-    /// <summary>スタートパネル</summary>
-    public GameObject StartPanel;
+    /// <summary>ゲームディレクター</summary>
+    public GameDirector GameDirector;
+    /// <summary>オーディオマネージャー</summary>
+    private AudioManager audioManager;
 
     //GameObject generator = GameObject.Find("PlayGenerator");
-    void Start()
+    private void Awake()
     {
-        //スタートパネルのの初期位置
-        this.StartPanel.transform.localPosition = new Vector3(0, 0, 0);
     }
 
-    /// <summary>
-    /// ゲーム開始処理
-    /// </summary>
-    public void GameStart()
+    void Start()
     {
-        //ボール初期位置に配置
-        this.transform.localPosition = new Vector3(0, 0, 0);
-        //ボールの移動方向
-        BallXRange = Random.Range(-8, 8);
-        BallYRange = Random.Range(-8, 8);
-        
-        if (-2 < BallXRange && BallXRange < 2)
-        {
-            GameStart();
-        }
-        else if (-2 < BallXRange && BallXRange < 2)
-        {
-            GameStart();
-        }
-        this.StartPanel.transform.localPosition = new Vector3(0, 450, 0);
+        audioManager = GameDirector.AudioManager;
     }
+
+   
 
     void Update()
     {
@@ -58,6 +44,9 @@ public class BallController : MonoBehaviour
     /// <param name="other"></param>
     void OnTriggerEnter2D(Collider2D other)
     {
+
+        audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
+
         //衝突したオブジェクトの判別
         if (other.gameObject.tag == "Player1")
         {
@@ -91,13 +80,13 @@ public class BallController : MonoBehaviour
         }
         else if (other.gameObject.tag == "Goal1")
         {
-            PlayGenerator.GetComponent<PlayGenerator>().AddScore_p2();
-            GameStart();
+            PlayGenerator.GetComponent<GameDirector>().AddScore_p2();
+            GameDirector.StartGame();
         }
         else if (other.gameObject.tag == "Goal2")
         {
-            PlayGenerator.GetComponent<PlayGenerator>().AddScore_p1();
-            GameStart();
+            PlayGenerator.GetComponent<GameDirector>().AddScore_p1();
+            GameDirector.StartGame();
         }
     }
 }
