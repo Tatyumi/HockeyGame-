@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayGenerator : MonoBehaviour {
+public class GameDirector : MonoBehaviour {
     
     /// <summary>プレイヤー1テキスト</summary>
     public GameObject PlayerText1;
@@ -29,7 +29,7 @@ public class PlayGenerator : MonoBehaviour {
         this.PlayerText2.GetComponent<Text>().text = "2P Score:" + score2.ToString();
         score1 = 0;
         score2 = 0;
-        MatchPoint = TitleDirector.MatchNum;
+        MatchPoint = TitleDirector.MatchPoint;
     }
 	
     /// <summary>
