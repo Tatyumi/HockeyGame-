@@ -13,33 +13,16 @@ public class TitleDirector : MonoBehaviour {
     {
         DontDestroyOnLoad(this);
     }
-
+    
     /// <summary>
-    /// １ポイントマッチを選択
+    /// 目標ポイントを設定し，ゲームシーンに遷移等のゲーム開始にするための処理
     /// </summary>
-    public void SelectOnepointmuch()
-    {
-        MatchNum = 1;
+    /// <param name="selectedPoint">選択した目標ポイント</param>
+    public void StartProcess(int selectedPoint) {
+        MatchNum = selectedPoint;
         SceneManager.LoadScene("VsScene");
     }
 
-    /// <summary>
-    /// 3ポイントマッチを選択
-    /// </summary>
-    public void SelectThreepointmuch()
-    {
-        MatchNum = 3;
-        SceneManager.LoadScene("VsScene");
-    }
-
-    /// <summary>
-    /// 5ポイントマッチを選択
-    /// </summary>
-    public void SelectFivepointmuch()
-    {
-        MatchNum = 5;
-        SceneManager.LoadScene("VsScene");
-    }
 
     /// <summary>
     /// ゲーム設定パネル表示
