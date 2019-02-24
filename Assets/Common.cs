@@ -11,13 +11,17 @@ namespace Common
         /// <summary>タイトルシーンのBGM名</summary>
         public const string TITLE_SCENE_BGM = "TitleSceneBGM";
         /// <summary>プレイシーンのBGM名</summary>
-        public const string PLAY_SCENE_BGM = "PlaySceneBGM";
+        public const string VS_SCENE_BGM = "VsSceneBGM";
         /// <summary>ボール反射SE名</summary>
         public const string BOUNCE_BALL_SE = "BounceBallSE";
         /// <summary>ゲーム開始SE名</summary>
         public const string START_GAME_SE = "StartGameSE";
         /// <summary>ゲーム終了SE名</summary>
         public const string END_GAME_SE = "EndGameSE";
+        /// <summary>タップボタンSE名</summary>
+        public const string TAP_BUTTON_SE = "TapButtonSE";
+        /// <summary>ゴールSE名</summary>
+        public const string GOAL_SE = "GoalSE";
 
         // シーン名
         /// <summary>タイトルシーン名</summary>
