@@ -18,8 +18,6 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     public AudioClip EndGameSE;
     /// <summary>ボタンタップSE</summary>
     public AudioClip TapButtonSE;
-    /// <summary>ゴールSE</summary>
-    public AudioClip GoalSE;
 
     /// <summary>全オウディオ保持ディクショナリ</summary>
     private Dictionary<string, AudioClip> AudioDic;
@@ -46,11 +44,9 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
             { StartGameSE.name, StartGameSE },
             { EndGameSE.name, EndGameSE },
             {TapButtonSE.name, TapButtonSE},
-            {GoalSE.name, GoalSE},
         };
     }
     
-
     /// <summary>
     /// 音を流す
     /// </summary>
