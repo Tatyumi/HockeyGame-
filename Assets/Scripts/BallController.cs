@@ -45,11 +45,11 @@ public class BallController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
 
         //衝突したオブジェクトの判別
         if (other.gameObject.tag == "Player1")
         {
+            audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
             //x軸に方向の反転
             BallXRange = BallXRange * -1 + 2.0f;
             if (this.transform.localPosition.y > 0)
@@ -63,6 +63,7 @@ public class BallController : MonoBehaviour
         }
         else if (other.gameObject.tag == "Player2")
         {
+            audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
             //x軸に方向の反転
             BallXRange = BallXRange * -1 - 2.0f;
             if (this.transform.localPosition.y > 0)
@@ -75,7 +76,9 @@ public class BallController : MonoBehaviour
             }
         }
         else if (other.gameObject.tag == "Wall")
-        {//y軸の方向の反転
+        {
+            audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
+            //y軸の方向の反転
             BallYRange *= -1;
         }
         else if (other.gameObject.tag == "Goal1")

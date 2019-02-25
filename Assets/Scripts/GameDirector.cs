@@ -53,8 +53,9 @@ public class GameDirector : MonoBehaviour {
     /// </summary>
     public void StartGame()
     {
+        Debug.Log("ゲームスタート！");
         //ボール初期位置に配置
-        this.transform.localPosition = new Vector3(0, 0, 0);
+        Ball.transform.localPosition = new Vector3(0, 0, 0);
         //ボールの移動方向
         ballController.BallXRange = Random.Range(-8, 8);
         ballController.BallYRange = Random.Range(-8, 8);
