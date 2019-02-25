@@ -33,12 +33,19 @@ public class TitleDirector : MonoBehaviour {
         audioManager.StopSound();
     }
 
-
     /// <summary>
     /// ゲーム設定パネル表示
     /// </summary>
     public void DisplaySettingPanel()
     {
         this.SettingPanel.transform.localPosition = new Vector3(0, -100, 0);
+    }
+
+    /// <summary>
+    /// ボタンタップ処理
+    /// </summary>
+    public void TapButton()
+    {
+        audioManager.PlaySound(Constans.TAP_BUTTON_SE);
     }
 }
