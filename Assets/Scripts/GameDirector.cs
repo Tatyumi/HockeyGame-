@@ -40,6 +40,8 @@ public class GameDirector : MonoBehaviour {
 
         this.PlayerText1.GetComponent<Text>().text = "1P Score:" + OnePlayerPoint.ToString();
         this.PlayerText2.GetComponent<Text>().text = "2P Score:" + TwoPlayerPoint.ToString();
+        this.JudagePanel.SetActive(false);
+        this.AgainPanel.SetActive(false);
         OnePlayerPoint = 0;
         TwoPlayerPoint = 0;
         MatchPoint = TitleDirector.MatchPoint;
@@ -53,7 +55,8 @@ public class GameDirector : MonoBehaviour {
     /// </summary>
     public void StartGame()
     {
-        Debug.Log("ゲームスタート！");
+        // ゲーム開始音
+        AudioManager.PlaySound(Constans.START_GAME_SE);
         //ボール初期位置に配置
         Ball.transform.localPosition = new Vector3(0, 0, 0);
         //ボールの移動方向
@@ -102,14 +105,16 @@ public class GameDirector : MonoBehaviour {
         if (score1 == MatchPoint)
         {
             AudioManager.PlaySound(Constans.END_GAME_SE);
-            this.JudagePanel.transform.localPosition = new Vector3(0, 0, 0);
+            //this.JudagePanel.transform.localPosition = new Vector3(0, 0, 0);
+            this.JudagePanel.SetActive(true);
             this.JudagePanel.transform.Rotate(0, 0, 180);
             Destroy(this.Ball);
         }
         else if (score2 == MatchPoint)
         {
             AudioManager.PlaySound(Constans.END_GAME_SE);
-            this.JudagePanel.transform.localPosition = new Vector3(0, 0, 0);
+            //this.JudagePanel.transform.localPosition = new Vector3(0, 0, 0);
+            this.JudagePanel.SetActive(true);
             Destroy(this.Ball);
         }
     }
@@ -119,7 +124,8 @@ public class GameDirector : MonoBehaviour {
     /// </summary>
     public void CountinuePanelDisplay() {
 
-        this.AgainPanel.transform.localPosition = new Vector3(0, 0, 0);
+        //this.AgainPanel.transform.localPosition = new Vector3(0, 0, 0);
+        this.AgainPanel.SetActive(true);
 
         Destroy(this.JudagePanel);
     }
