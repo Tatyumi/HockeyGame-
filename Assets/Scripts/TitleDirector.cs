@@ -21,6 +21,7 @@ public class TitleDirector : MonoBehaviour {
     {
         DontDestroyOnLoad(this);
         audioManager.PlaySound(Constans.TITLE_SCENE_BGM);
+        this.SettingPanel.SetActive(false);
     }
     
     /// <summary>
@@ -38,7 +39,8 @@ public class TitleDirector : MonoBehaviour {
     /// </summary>
     public void DisplaySettingPanel()
     {
-        this.SettingPanel.transform.localPosition = new Vector3(0, -100, 0);
+        //this.SettingPanel.transform.localPosition = new Vector3(0, -100, 0);
+        this.SettingPanel.SetActive(true);
     }
 
     /// <summary>
