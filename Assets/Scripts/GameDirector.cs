@@ -13,7 +13,7 @@ public class GameDirector : MonoBehaviour {
     /// <summary>ジャッジパネル</summary>
     public GameObject JudagePanel;
     /// <summary>アゲインパネル</summary>
-    public GameObject AgainPanel;
+    public GameObject CountinuePanel;
     /// <summary>ボール</summary>
     public GameObject Ball;
     /// <summary>プレイヤー1のポイント</summary>
@@ -41,13 +41,12 @@ public class GameDirector : MonoBehaviour {
         this.PlayerText1.GetComponent<Text>().text = "1P Score:" + OnePlayerPoint.ToString();
         this.PlayerText2.GetComponent<Text>().text = "2P Score:" + TwoPlayerPoint.ToString();
         this.JudagePanel.SetActive(false);
-        this.AgainPanel.SetActive(false);
+        this.CountinuePanel.SetActive(false);
+        this.StartPanel.SetActive(true);
         OnePlayerPoint = 0;
         TwoPlayerPoint = 0;
         MatchPoint = TitleDirector.MatchPoint;
         AudioManager.PlaySound(Constans.VS_SCENE_BGM);
-        //スタートパネルのの初期位置
-        this.StartPanel.transform.localPosition = new Vector3(0, 0, 0);
     }
 
     /// <summary>
@@ -71,7 +70,7 @@ public class GameDirector : MonoBehaviour {
         {
             StartGame();
         }
-        this.StartPanel.transform.localPosition = new Vector3(0, 450, 0);
+        this.StartPanel.SetActive(false);
     }
 
     /// <summary>
@@ -125,7 +124,7 @@ public class GameDirector : MonoBehaviour {
     public void CountinuePanelDisplay() {
 
         //this.AgainPanel.transform.localPosition = new Vector3(0, 0, 0);
-        this.AgainPanel.SetActive(true);
+        this.CountinuePanel.SetActive(true);
 
         Destroy(this.JudagePanel);
     }
@@ -146,5 +145,13 @@ public class GameDirector : MonoBehaviour {
     {
         AudioManager.StopSound();
         SceneManager.LoadScene(Constans.VS_SCENE_NAME);
+    }
+
+    /// <summary>
+    /// ボタンタップ処理
+    /// </summary>
+    public void TapButton()
+    {
+        AudioManager.PlaySound(Constans.TAP_BUTTON_SE);
     }
 }
