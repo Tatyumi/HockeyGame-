@@ -703,7 +703,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BallXRange: 0
   BallYRange: 0
-  PlayGenerator: {fileID: 1961178025}
   GameDirector: {fileID: 1961178027}
 --- !u!1 &325376789
 GameObject:
@@ -3111,13 +3110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6cbb51837b50554da3bb5ed16e6c1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerText1: {fileID: 473805376}
-  PlayerText2: {fileID: 540702545}
+  Player1ScoreObj: {fileID: 473805376}
+  Player2ScoreObj: {fileID: 540702545}
   JudagePanel: {fileID: 1365913569}
   CountinuePanel: {fileID: 792028473}
   Ball: {fileID: 281067041}
-  OnePlayerPoint: 0
-  TwoPlayerPoint: 0
+  Player1Score: 0
+  Player2Score: 0
   MatchPoint: 0
   AudioManager: {fileID: 0}
   StartPanel: {fileID: 1264152716}
