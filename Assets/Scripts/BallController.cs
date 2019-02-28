@@ -2,31 +2,23 @@
 using System.Collections;
 using Common;
 
+
 public class BallController : MonoBehaviour
 {
     /// <summary>ボールの縦軸の角度</summary>
     public float BallXRange;
     /// <summary>ボールの横軸の角度</summary>
     public float BallYRange;
-    /// <summary>ボール生成オブジェクト</summary>
-    public GameObject PlayGenerator;
     /// <summary>ゲームディレクター</summary>
     public GameDirector GameDirector;
     /// <summary>オーディオマネージャー</summary>
     private AudioManager audioManager;
 
-    //GameObject generator = GameObject.Find("PlayGenerator");
-    private void Awake()
-    {
-    }
-
     void Start()
     {
         audioManager = GameDirector.AudioManager;
     }
-
-   
-
+    
     void Update()
     {
         this.transform.Translate(BallXRange, BallYRange, 0);
@@ -50,8 +42,11 @@ public class BallController : MonoBehaviour
         if (other.gameObject.tag == "Player1")
         {
             audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
-            //x軸に方向の反転
+
+            // プレイヤー2の方向にボールに速度を加えて反射
             BallXRange = BallXRange * -1 + 2.0f;
+
+            // 反射角が垂直にならないように角度を付ける
             if (this.transform.localPosition.y > 0)
             {
                 BallYRange += 1;
@@ -64,8 +59,11 @@ public class BallController : MonoBehaviour
         else if (other.gameObject.tag == "Player2")
         {
             audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
-            //x軸に方向の反転
+
+            // プレイヤー1の方向にボールに速度を加えて反射
             BallXRange = BallXRange * -1 - 2.0f;
+
+            // 反射角が垂直にならないように角度を付ける
             if (this.transform.localPosition.y > 0)
             {
                 BallYRange += 1;
@@ -78,17 +76,18 @@ public class BallController : MonoBehaviour
         else if (other.gameObject.tag == "Wall")
         {
             audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
-            //y軸の方向の反転
+
+            // y軸の方向にボールを反転
             BallYRange *= -1;
         }
         else if (other.gameObject.tag == "Goal1")
         {
-            PlayGenerator.GetComponent<GameDirector>().AddScore_p2();
+            GameDirector.AddScore_p2();
             GameDirector.StartGame();
         }
         else if (other.gameObject.tag == "Goal2")
         {
-            PlayGenerator.GetComponent<GameDirector>().AddScore_p1();
+            GameDirector.AddScore_p1();
             GameDirector.StartGame();
         }
     }
