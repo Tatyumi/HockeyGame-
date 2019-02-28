@@ -82,12 +82,16 @@ public class BallController : MonoBehaviour
         }
         else if (other.gameObject.tag == "Goal1")
         {
+            // プレイヤー2にスコアを加算
             GameDirector.AddScore_p2();
+            GameDirector.CheckScore(GameDirector.Player1Score, GameDirector.Player2Score);
             GameDirector.StartGame();
         }
         else if (other.gameObject.tag == "Goal2")
         {
+            // プレイヤー1にスコアを加算
             GameDirector.AddScore_p1();
+            GameDirector.CheckScore(GameDirector.Player1Score, GameDirector.Player2Score);
             GameDirector.StartGame();
         }
     }
