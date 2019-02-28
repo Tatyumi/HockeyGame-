@@ -19,7 +19,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     /// <summary>ボタンタップSE</summary>
     public AudioClip TapButtonSE;
 
-    /// <summary>全オウディオ保持ディクショナリ</summary>
+    /// <summary>全オーディオ保持ディクショナリ</summary>
     private Dictionary<string, AudioClip> AudioDic;
 
     private void Awake()
@@ -36,7 +36,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
 
         audioSource = gameObject.GetComponent<AudioSource>();
 
-        // オウディオを格納
+        // オーディオを格納
         AudioDic = new Dictionary<string, AudioClip> {
             { TitleSceneBGM.name, TitleSceneBGM},
             { VsSceneBGM.name, VsSceneBGM },
@@ -46,7 +46,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
             {TapButtonSE.name, TapButtonSE},
         };
     }
-    
+
     /// <summary>
     /// 音を流す
     /// </summary>
@@ -69,5 +69,5 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         audioSource.Stop();
     }
-    
+
 }
