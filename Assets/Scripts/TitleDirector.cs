@@ -44,9 +44,9 @@ public class TitleDirector : MonoBehaviour {
     }
 
     /// <summary>
-    /// ボタンタップ処理
+    /// ボタンタップじのSE再生
     /// </summary>
-    public void TapButton()
+    public void PlayTapButtonSE()
     {
         audioManager.PlaySound(Constans.TAP_BUTTON_SE);
     }

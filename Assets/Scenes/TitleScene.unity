@@ -633,7 +633,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 567283918}
-        m_MethodName: TapButton
+        m_MethodName: PlayTapButtonSE
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -893,7 +893,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 567283918}
-        m_MethodName: TapButton
+        m_MethodName: PlayTapButtonSE
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1174,7 +1174,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 567283918}
-        m_MethodName: TapButton
+        m_MethodName: PlayTapButtonSE
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1446,7 +1446,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 567283918}
-        m_MethodName: TapButton
+        m_MethodName: PlayTapButtonSE
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
