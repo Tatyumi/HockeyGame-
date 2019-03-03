@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Common;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IRefrectableBall
 {
     /// <summary>移動速度</summary>
     private float speed = 10.0f;
@@ -69,4 +70,33 @@ public class PlayerController : MonoBehaviour
         isMoveDown = false;
     }
 
+    /// <summary>
+    /// ボールを反射する
+    /// </summary>
+    public void RefrectBall()
+    {
+        Debug.Log("プレイヤーに当たった");
+
+        // ボールの進行方向を判別
+        if (BallController.BallXRange > 0)
+        {
+            // ボールを反射かつ加速する
+            BallController.BallXRange = BallController.BallXRange * -1 - Constans.ADD_SPEAD;
+        }
+        else
+        {
+            // ボールを反射かつ加速する
+            BallController.BallXRange = BallController.BallXRange * -1 + Constans.ADD_SPEAD;
+        }
+
+        // 反射角が垂直か判別
+        if (this.transform.localPosition.y > 0)
+        {
+            BallController.BallYRange += 1;
+        }
+        else if (this.transform.localPosition.y < 0)
+        {
+            BallController.BallYRange -= 1;
+        }
+    }
 }

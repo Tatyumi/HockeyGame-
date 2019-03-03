@@ -31,5 +31,7 @@ namespace Common
 
         // オブジェクト名
         public static string AUDIO_MANAGER = "AudioManager";
+
+        public static float ADD_SPEAD = 2.0f;
     }
 }

@@ -28,7 +28,7 @@ public class GameDirector : MonoBehaviour
     /// <summary>スタートパネル</summary>
     public GameObject StartPanel;
     /// <summary>ボールコントローラ</summary>
-    private BallController ballController;
+    //private BallController ballController;
     /// <summary>プレイヤー1スコアテキスト</summary>
     private Text player1ScoreText;
     /// <summary>プレイヤー2スコアテキスト</summary>
@@ -39,7 +39,7 @@ public class GameDirector : MonoBehaviour
         AudioManager = GameObject.Find(Constans.AUDIO_MANAGER).GetComponent<AudioManager>();
         player1ScoreText = this.Player1ScoreObj.GetComponent<Text>();
         player2ScoreText = this.Player2ScoreObj.GetComponent<Text>();
-        ballController = Ball.GetComponent<BallController>();
+        //ballController = Ball.GetComponent<BallController>();
     }
 
     // Use this for initialization
@@ -71,15 +71,15 @@ public class GameDirector : MonoBehaviour
         Ball.transform.localPosition = new Vector3(0, 0, 0);
 
         //ボールの移動方向を代入
-        ballController.BallXRange = Random.Range(-8, 8);
-        ballController.BallYRange = Random.Range(-8, 8);
+        BallController.BallXRange = Random.Range(-8, 8);
+        BallController.BallYRange = Random.Range(-8, 8);
 
         // ボールの発射角が垂直かどうか判別
-        if (-2 < ballController.BallXRange && ballController.BallXRange < 2)
+        if (-2 < BallController.BallXRange && BallController.BallXRange < 2)
         {
             StartGame();
         }
-        else if (-2 < ballController.BallXRange && ballController.BallXRange < 2)
+        else if (-2 < BallController.BallXRange && BallController.BallXRange < 2)
         {
             StartGame();
         }

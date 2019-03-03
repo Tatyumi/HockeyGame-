@@ -565,8 +565,8 @@ RectTransform:
   - {fileID: 1473516787}
   - {fileID: 325376790}
   - {fileID: 281067042}
-  - {fileID: 726895356}
   - {fileID: 752062202}
+  - {fileID: 726895356}
   - {fileID: 540702546}
   - {fileID: 846868343}
   - {fileID: 1531819889}
@@ -701,8 +701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67df6bbee06a72a44973164a67bb5d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallXRange: 0
-  BallYRange: 0
   GameDirector: {fileID: 1961178027}
 --- !u!1 &325376789
 GameObject:
@@ -1736,6 +1734,7 @@ GameObject:
   - component: {fileID: 726895359}
   - component: {fileID: 726895358}
   - component: {fileID: 726895357}
+  - component: {fileID: 726895360}
   m_Layer: 5
   m_Name: BottomWall
   m_TagString: Wall
@@ -1754,7 +1753,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 97676041}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1819,6 +1818,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 726895355}
+--- !u!114 &726895360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726895355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cd481686f5aa54091a8444a754f2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &752062201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,6 +1840,7 @@ GameObject:
   - component: {fileID: 752062205}
   - component: {fileID: 752062204}
   - component: {fileID: 752062203}
+  - component: {fileID: 752062206}
   m_Layer: 5
   m_Name: 'UpWall '
   m_TagString: Wall
@@ -1848,7 +1859,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 97676041}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1913,6 +1924,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 752062201}
+--- !u!114 &752062206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 752062201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cd481686f5aa54091a8444a754f2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &792028473
 GameObject:
   m_ObjectHideFlags: 0
