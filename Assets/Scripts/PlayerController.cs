@@ -75,8 +75,6 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
     /// </summary>
     public void RefrectBall()
     {
-        Debug.Log("プレイヤーに当たった");
-
         // ボールの進行方向を判別
         if (BallController.BallXRange > 0)
         {
