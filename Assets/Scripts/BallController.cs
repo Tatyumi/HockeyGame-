@@ -39,20 +39,23 @@ public class BallController : MonoBehaviour
         if (other.gameObject.tag == "Goal1")
         {
             // プレイヤー2にスコアを加算
-            GameDirector.AddScore_p2();
+            GameDirector.AddPlayer2Score();
             GameDirector.CheckScore(GameDirector.Player1Score, GameDirector.Player2Score);
             GameDirector.StartGame();
         }
         else if (other.gameObject.tag == "Goal2")
         {
             // プレイヤー1にスコアを加算
-            GameDirector.AddScore_p1();
+            GameDirector.AddPlayer1Score();
             GameDirector.CheckScore(GameDirector.Player1Score, GameDirector.Player2Score);
             GameDirector.StartGame();
         }
         else
         {
+            // 反射SEの再生
             audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
+
+            // ボール反射処理
             var obj = other.gameObject.GetComponent<IRefrectableBall>();
             if (obj != null)
             {
