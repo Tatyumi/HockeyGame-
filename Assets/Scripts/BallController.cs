@@ -34,16 +34,16 @@ public class BallController : MonoBehaviour
         // 衝突したオブジェクトを判別
         if (other.gameObject.tag == "Goal")
         {
-            var obj = other.gameObject.GetComponent<ScoreDirector>();
+            var obj = other.gameObject.GetComponent<PointDirector>();
             
             // 存在チェック
             if (obj != null)
             {
-                // スコア加算
-                obj.AddScore();
+                // ポイント加算
+                obj.AddPoint();
 
-                //　目標スコアに達したか判別
-                if (obj.IsCheckScore())
+                //　目標ポイントに達したか判別
+                if (obj.IsCheckPoint())
                 {
                     // ゲーム終了処理
                     GameDirector.FinishedGame(obj.name);

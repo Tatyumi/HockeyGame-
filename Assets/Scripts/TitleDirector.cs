@@ -39,12 +39,11 @@ public class TitleDirector : MonoBehaviour {
     /// </summary>
     public void DisplaySettingPanel()
     {
-        //this.SettingPanel.transform.localPosition = new Vector3(0, -100, 0);
         this.SettingPanel.SetActive(true);
     }
 
     /// <summary>
-    /// ボタンタップじのSE再生
+    /// ボタンタップ時のSE再生
     /// </summary>
     public void PlayTapButtonSE()
     {

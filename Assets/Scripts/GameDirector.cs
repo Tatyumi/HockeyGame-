@@ -32,7 +32,7 @@ public class GameDirector : MonoBehaviour
         this.CountinuePanel.SetActive(false);
         this.StartPanel.SetActive(true);
 
-        // タイトルシーンで指定したスコアを取得
+        // タイトルシーンで指定したポイントを取得
         MatchPoint = TitleDirector.MatchPoint;
 
         // BGM再生

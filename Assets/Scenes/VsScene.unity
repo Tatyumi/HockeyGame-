@@ -1298,8 +1298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3771e3b9df375944889f2f89cfeb6653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerScore: {fileID: 419767367}
-  MatchScore: 0
+  PointScore: {fileID: 419767367}
+  MatchPoint: 0
 --- !u!1 &418734248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,8 +1763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3771e3b9df375944889f2f89cfeb6653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerScore: {fileID: 1681157077}
-  MatchScore: 0
+  PointScore: {fileID: 1681157077}
+  MatchPoint: 0
 --- !u!1 &721273148
 GameObject:
   m_ObjectHideFlags: 0
