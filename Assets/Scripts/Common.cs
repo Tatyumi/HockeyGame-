@@ -32,6 +32,11 @@ namespace Common
         // オブジェクト名
         public static string AUDIO_MANAGER = "AudioManager";
 
-        public static float ADD_SPEAD = 2.0f;
+        /// <summary>ボール反射時の加速度</summary>
+        public static float BALL_ADD_SPEAD = 2.0f;
+        /// <summary>プレイヤーのY座標上限値</summary>
+        public static int PLAYER_MAX_YPOSITION = 185;
+        /// <summary>プレイヤーのY座標下限値</summary>
+        public static int PLAYER_MIN_YPOSITION = -185;
     }
 }

@@ -11,23 +11,11 @@ public class BallController : MonoBehaviour
     public static float BallYRange;
     /// <summary>ゲームディレクター</summary>
     public GameDirector GameDirector;
-    /// <summary>オーディオマネージャー</summary>
-    private AudioManager audioManager;
-
-    void Start()
-    {
-        audioManager = GameDirector.AudioManager;
-    }
 
     void Update()
     {
+        // ボール移動
         this.transform.Translate(BallXRange, BallYRange, 0);
-
-        //Y方向の移動量が0の場合
-        if (BallYRange == 0)
-        {
-            BallYRange += 3;
-        }
     }
 
     /// <summary>
@@ -36,30 +24,45 @@ public class BallController : MonoBehaviour
     /// <param name="other">衝突したオブジェクト</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Goal1")
+        // 衝突したオブジェクトを判別
+        if (other.gameObject.tag == "Goal")
         {
-            // プレイヤー2にスコアを加算
-            GameDirector.AddPlayer2Score();
-            GameDirector.CheckScore(GameDirector.Player1Score, GameDirector.Player2Score);
-            GameDirector.StartGame();
-        }
-        else if (other.gameObject.tag == "Goal2")
-        {
-            // プレイヤー1にスコアを加算
-            GameDirector.AddPlayer1Score();
-            GameDirector.CheckScore(GameDirector.Player1Score, GameDirector.Player2Score);
-            GameDirector.StartGame();
+            var obj = other.gameObject.GetComponent<ScoreDirector>();
+            
+            // 存在チェック
+            if (obj != null)
+            {
+                // スコア加算
+                obj.AddScore();
+
+                //　目標スコアに達したか判別
+                if (obj.IsCheckScore())
+                {
+                    // ゲーム終了処理
+                    Debug.Log("ゲーム終了");
+                }
+                else
+                {
+                    // ゲーム再スタート
+                    GameDirector.StartGame();
+                }
+            }
         }
         else
         {
-            // 反射SEの再生
-            audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
-
-            // ボール反射処理
             var obj = other.gameObject.GetComponent<IRefrectableBall>();
+
+            // 存在チェック
             if (obj != null)
             {
+                // ボール反射処理
                 obj.RefrectBall();
+            }
+
+            // Y軸角度が0の場合
+            if (BallYRange == 0)
+            {
+                BallYRange += 3;
             }
         }
     }

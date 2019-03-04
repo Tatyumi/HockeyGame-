@@ -4,6 +4,10 @@ using Common;
 
 public class PlayerController : MonoBehaviour, IRefrectableBall
 {
+    /// <summary>ゲームディレクター</summary>
+    public GameDirector GameDirector;
+    /// <summary>オーディオマネージャー</summary>
+    private AudioManager audioManager;
     /// <summary>移動速度</summary>
     private float speed = 10.0f;
     /// <summary>上に移動ボタン押下判別</summary>
@@ -11,10 +15,13 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
     /// <summary>下に移動ボタン押下判別</summary>
     private bool isMoveDown = false;
 
-    // Update is called once per frame
+    void Start()
+    {
+        audioManager = GameDirector.AudioManager;
+    }
+
     void Update()
     {
-
         //上に移動ボタンが押されている場合
         if (isMoveUp)
         {
@@ -27,14 +34,14 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
             this.transform.position = new Vector3(transform.position.x, transform.position.y - speed, 0);
         }
 
-        //プレイヤーのY座標が185~-185外の場合
-        if (this.transform.localPosition.y >= 185)
+        //プレイヤーのY座標が既定の範囲内か判別
+        if (this.transform.localPosition.y >= Constans.PLAYER_MAX_YPOSITION)
         {
-            this.transform.localPosition = new Vector3(transform.localPosition.x, 180, 0);
+            this.transform.localPosition = new Vector3(transform.localPosition.x, Constans.PLAYER_MAX_YPOSITION - 5, 0);
         }
-        else if (this.transform.localPosition.y <= -185)
+        else if (this.transform.localPosition.y <= Constans.PLAYER_MIN_YPOSITION)
         {
-            this.transform.localPosition = new Vector3(transform.localPosition.x, -180, 0);
+            this.transform.localPosition = new Vector3(transform.localPosition.x, Constans.PLAYER_MIN_YPOSITION + 5, 0);
         }
     }
 
@@ -79,12 +86,12 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
         if (BallController.BallXRange > 0)
         {
             // ボールを反射かつ加速する
-            BallController.BallXRange = BallController.BallXRange * -1 - Constans.ADD_SPEAD;
+            BallController.BallXRange = BallController.BallXRange * -1 - Constans.BALL_ADD_SPEAD;
         }
         else
         {
             // ボールを反射かつ加速する
-            BallController.BallXRange = BallController.BallXRange * -1 + Constans.ADD_SPEAD;
+            BallController.BallXRange = BallController.BallXRange * -1 + Constans.BALL_ADD_SPEAD;
         }
 
         // 反射角が垂直か判別
@@ -96,5 +103,8 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
         {
             BallController.BallYRange -= 1;
         }
+
+        // 反射SEを再生
+        audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
     }
 }

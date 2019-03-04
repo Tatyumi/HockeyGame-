@@ -6,48 +6,27 @@ using Common;
 
 public class GameDirector : MonoBehaviour
 {
-
-    /// <summary>プレイヤー1スコア</summary>
-    public GameObject Player1ScoreObj;
-    /// <summary>プレイヤー2スコア</summary>
-    public GameObject Player2ScoreObj;
     /// <summary>ジャッジパネル</summary>
     public GameObject JudagePanel;
     /// <summary>アゲインパネル</summary>
     public GameObject CountinuePanel;
     /// <summary>ボール</summary>
     public GameObject Ball;
-    /// <summary>プレイヤー1のスコア</summary>
-    public int Player1Score;
-    /// <summary>プレイヤー2のスコア</summary>
-    public int Player2Score;
     /// <summary>目標ポイント</summary>
     public int MatchPoint;
     /// <summary>オーディオマネージャー</summary>
     public AudioManager AudioManager;
     /// <summary>スタートパネル</summary>
     public GameObject StartPanel;
-    /// <summary>プレイヤー1スコアテキスト</summary>
-    private Text player1ScoreText;
-    /// <summary>プレイヤー2スコアテキスト</summary>
-    private Text player2ScoreText;
 
     private void Awake()
     {
         AudioManager = GameObject.Find(Constans.AUDIO_MANAGER).GetComponent<AudioManager>();
-        player1ScoreText = this.Player1ScoreObj.GetComponent<Text>();
-        player2ScoreText = this.Player2ScoreObj.GetComponent<Text>();
     }
 
     // Use this for initialization
     void Start()
     {
-        // スコアの初期値代入
-        Player1Score = 0;
-        Player2Score = 0;
-        player1ScoreText.text = "1P Score:" + Player1Score.ToString();
-        player2ScoreText.text = "2P Score:" + Player2Score.ToString();
-
         // 各パネルを初期状態にする
         this.JudagePanel.SetActive(false);
         this.CountinuePanel.SetActive(false);
@@ -86,24 +65,6 @@ public class GameDirector : MonoBehaviour
 
         // スタートパネルを非表示にする
         this.StartPanel.SetActive(false);
-    }
-
-    /// <summary>
-    /// プレイヤー１のスコア加算
-    /// </summary>
-	public void AddPlayer1Score()
-    {
-        Player1Score += 1;
-        player1ScoreText.text = "1P Score:" + Player1Score.ToString();
-    }
-
-    /// <summary>
-    /// プレイヤー2のスコア加算
-    /// </summary>
-    public void AddPlayer2Score()
-    {
-        Player2Score += 1;
-        player2ScoreText.text = "2P Score:" + Player2Score.ToString();
     }
 
     /// <summary>
