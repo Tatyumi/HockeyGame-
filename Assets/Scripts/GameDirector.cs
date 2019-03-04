@@ -68,32 +68,20 @@ public class GameDirector : MonoBehaviour
     }
 
     /// <summary>
-    /// 両スコアが目標スコアに達した時の判定処理
+    /// ゲーム終了処理
     /// </summary>
-    /// <param name="player1Score">プレイヤー1のスコア</param>
-    /// <param name="player2Score">プレイヤー2のスコア</param>
-    public void CheckScore(int player1Score, int player2Score)
+    public void FinishedGame(string objName)
     {
-        // プレーヤー1が勝利した場合
-        if (player1Score == MatchPoint)
-        {
-            AudioManager.PlaySound(Constans.END_GAME_SE);
+        this.JudagePanel.SetActive(true);
 
-            // プレイヤー１が勝利になるようにジャッジパネルを表示
-            this.JudagePanel.SetActive(true);
+        // 勝利したプレイヤーの判別
+        if (objName.Contains("2"))
+        {
             this.JudagePanel.transform.Rotate(0, 0, 180);
-
-            Destroy(this.Ball);
         }
-        else if (player2Score == MatchPoint)
-        {
-            AudioManager.PlaySound(Constans.END_GAME_SE);
 
-            // プレイヤー２が勝利になるようにジャッジパネルを表示
-            this.JudagePanel.SetActive(true);
-
-            Destroy(this.Ball);
-        }
+        AudioManager.PlaySound(Constans.END_GAME_SE);
+        Destroy(this.Ball);
     }
 
     /// <summary>

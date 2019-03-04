@@ -12,6 +12,13 @@ public class BallController : MonoBehaviour
     /// <summary>ゲームディレクター</summary>
     public GameDirector GameDirector;
 
+    private void Start()
+    {
+        // ゲーム開始待機中の動作
+        BallXRange = 0;
+        BallYRange = 1;
+    }
+
     void Update()
     {
         // ボール移動
@@ -39,7 +46,7 @@ public class BallController : MonoBehaviour
                 if (obj.IsCheckScore())
                 {
                     // ゲーム終了処理
-                    Debug.Log("ゲーム終了");
+                    GameDirector.FinishedGame(obj.name);
                 }
                 else
                 {
