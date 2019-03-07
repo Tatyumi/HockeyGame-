@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Common;
+using CommonConstans;
 
 public class PointDirector : MonoBehaviour {
 

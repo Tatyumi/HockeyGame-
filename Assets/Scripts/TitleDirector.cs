@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using Common;
+using CommonConstans;
 
 public class TitleDirector : MonoBehaviour {
 
@@ -14,13 +14,13 @@ public class TitleDirector : MonoBehaviour {
 
     private void Awake()
     {
-        audioManager = GameObject.Find(Constans.AUDIO_MANAGER).GetComponent<AudioManager>();
+        audioManager = GameObject.Find(CommonConstans.ObjectName.AUDIO_MANAGER).GetComponent<AudioManager>();
     }
 
     void Start()
     {
         DontDestroyOnLoad(this);
-        audioManager.PlaySound(Constans.TITLE_SCENE_BGM);
+        audioManager.PlaySound(CommonConstans.SoundName.TITLE_SCENE_BGM);
         this.SettingPanel.SetActive(false);
     }
     
@@ -30,7 +30,7 @@ public class TitleDirector : MonoBehaviour {
     /// <param name="selectedPoint">選択した目標ポイント</param>
     public void StartProcess(int selectedPoint) {
         MatchPoint = selectedPoint;
-        SceneManager.LoadScene(Constans.VS_SCENE_NAME);
+        SceneManager.LoadScene(CommonConstans.SceneName.VS_SCENE_NAME);
         audioManager.StopSound();
     }
 
@@ -47,6 +47,6 @@ public class TitleDirector : MonoBehaviour {
     /// </summary>
     public void PlayTapButtonSE()
     {
-        audioManager.PlaySound(Constans.TAP_BUTTON_SE);
+        audioManager.PlaySound(CommonConstans.SoundName.TAP_BUTTON_SE);
     }
 }

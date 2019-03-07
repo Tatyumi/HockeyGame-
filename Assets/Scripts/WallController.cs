@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Common;
+using CommonConstans;
 
 public class WallController : MonoBehaviour, IRefrectableBall
 {
@@ -24,6 +24,6 @@ public class WallController : MonoBehaviour, IRefrectableBall
         BallController.BallYRange *= -1;
 
         // 反射SEを再生
-        audioManager.PlaySound(Constans.BOUNCE_BALL_SE);
+        audioManager.PlaySound(CommonConstans.SoundName.BOUNCE_BALL_SE);
     }
 }

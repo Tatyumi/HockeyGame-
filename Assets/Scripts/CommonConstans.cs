@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Common
+namespace CommonConstans
 {
-    // 定数クラス
-    public static class Constans
+    //サウンド名
+    public static class SoundName
     {
-        //サウンド名
         /// <summary>タイトルシーンのBGM名</summary>
         public const string TITLE_SCENE_BGM = "TitleSceneBGM";
         /// <summary>プレイシーンのBGM名</summary>
@@ -23,15 +22,27 @@ namespace Common
         /// <summary>ゴールSE名</summary>
         public const string GOAL_SE = "GoalSE";
 
-        // シーン名
+    }
+
+    // シーン名
+    public static class SceneName
+    {
         /// <summary>タイトルシーン名</summary>
         public static string TITLE_SCENE_NAME = "TitleScene";
         /// <summary>VSシーン名</summary>
         public static string VS_SCENE_NAME = "VsScene";
+    }
 
-        // オブジェクト名
+    // オブジェクト名
+    public static class ObjectName
+    {
+        /// <summary>オーディオマネージャー</summary>
         public static string AUDIO_MANAGER = "AudioManager";
+    }
 
+    // 値
+    public static class Value
+    {
         /// <summary>ボール反射時の加速度</summary>
         public static float BALL_ADD_SPEAD = 2.0f;
         /// <summary>プレイヤーのY座標上限値</summary>

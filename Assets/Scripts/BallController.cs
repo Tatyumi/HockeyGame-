@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Common;
+using CommonConstans;
 
 
 public class BallController : MonoBehaviour
