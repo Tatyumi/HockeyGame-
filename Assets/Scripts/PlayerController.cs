@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using CommonConstans;
+using Common;
 
 public class PlayerController : MonoBehaviour, IRefrectableBall
 {
@@ -35,13 +35,13 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
         }
 
         //プレイヤーのY座標が既定の範囲内か判別
-        if (this.transform.localPosition.y >= CommonConstans.Value.PLAYER_MAX_YPOSITION)
+        if (this.transform.localPosition.y >= Common.Constans.PLAYER_MAX_YPOSITION)
         {
-            this.transform.localPosition = new Vector3(transform.localPosition.x, CommonConstans.Value.PLAYER_MAX_YPOSITION - 5, 0);
+            this.transform.localPosition = new Vector3(transform.localPosition.x, Common.Constans.PLAYER_MAX_YPOSITION - 5, 0);
         }
-        else if (this.transform.localPosition.y <= CommonConstans.Value.PLAYER_MIN_YPOSITION)
+        else if (this.transform.localPosition.y <= Common.Constans.PLAYER_MIN_YPOSITION)
         {
-            this.transform.localPosition = new Vector3(transform.localPosition.x, CommonConstans.Value.PLAYER_MIN_YPOSITION + 5, 0);
+            this.transform.localPosition = new Vector3(transform.localPosition.x, Common.Constans.PLAYER_MIN_YPOSITION + 5, 0);
         }
     }
 
@@ -86,12 +86,12 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
         if (BallController.BallXRange > 0)
         {
             // ボールを反射かつ加速する
-            BallController.BallXRange = BallController.BallXRange * -1 - CommonConstans.Value.BALL_ADD_SPEAD;
+            BallController.BallXRange = BallController.BallXRange * -1 - Common.Constans.BALL_ADD_SPEAD;
         }
         else
         {
             // ボールを反射かつ加速する
-            BallController.BallXRange = BallController.BallXRange * -1 + CommonConstans.Value.BALL_ADD_SPEAD;
+            BallController.BallXRange = BallController.BallXRange * -1 + Common.Constans.BALL_ADD_SPEAD;
         }
 
         // 反射角が垂直か判別
@@ -105,6 +105,6 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
         }
 
         // 反射SEを再生
-        audioManager.PlaySound(CommonConstans.SoundName.BOUNCE_BALL_SE);
+        audioManager.PlaySound(Common.SoundName.BOUNCE_BALL_SE);
     }
 }

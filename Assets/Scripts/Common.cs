@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CommonConstans
+namespace Common
 {
     //サウンド名
     public static class SoundName
@@ -40,8 +40,8 @@ namespace CommonConstans
         public static string AUDIO_MANAGER = "AudioManager";
     }
 
-    // 値
-    public static class Value
+    // 定数
+    public static class Constans
     {
         /// <summary>ボール反射時の加速度</summary>
         public static float BALL_ADD_SPEAD = 2.0f;
