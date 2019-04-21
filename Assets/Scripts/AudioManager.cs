@@ -31,9 +31,6 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
             return;
         }
 
-        //シーンが遷移しても破棄されない
-        DontDestroyOnLoad(gameObject);
-
         audioSource = gameObject.GetComponent<AudioSource>();
 
         // オーディオを格納

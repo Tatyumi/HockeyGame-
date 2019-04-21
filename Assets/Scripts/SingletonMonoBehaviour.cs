@@ -4,6 +4,7 @@
 public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T instance;
+    
     public static T Instance
     {
         get
@@ -18,6 +19,9 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
                     Debug.LogError(typeof(T) + "is nothing");
                 }
             }
+
+            //シーンが遷移しても破棄されない
+            DontDestroyOnLoad(instance);
 
             return instance;
         }
