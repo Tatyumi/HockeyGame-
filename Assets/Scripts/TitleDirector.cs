@@ -14,7 +14,8 @@ public class TitleDirector : MonoBehaviour {
 
     private void Awake()
     {
-        audioManager = GameObject.Find(Common.ObjectName.AUDIO_MANAGER).GetComponent<AudioManager>();
+        // オーディオマネージャー取得
+        audioManager = AudioManager.Instance;
     }
 
     void Start()

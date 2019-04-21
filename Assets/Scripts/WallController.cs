@@ -12,7 +12,8 @@ public class WallController : MonoBehaviour, IRefrectableBall
 
     void Start()
     {
-        audioManager = GameDirector.AudioManager;
+        // オーディオマネージャー取得
+        audioManager = AudioManager.Instance;
     }
 
     /// <summary>

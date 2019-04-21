@@ -15,13 +15,14 @@ public class GameDirector : MonoBehaviour
     /// <summary>目標ポイント</summary>
     public int MatchPoint;
     /// <summary>オーディオマネージャー</summary>
-    public AudioManager AudioManager;
+    private AudioManager audioManager;
     /// <summary>スタートパネル</summary>
     public GameObject StartPanel;
 
     private void Awake()
     {
-        AudioManager = GameObject.Find(Common.ObjectName.AUDIO_MANAGER).GetComponent<AudioManager>();
+        // オーディオマネージャー取得
+        audioManager = AudioManager.Instance;
     }
 
     // Use this for initialization
@@ -36,7 +37,7 @@ public class GameDirector : MonoBehaviour
         MatchPoint = TitleDirector.MatchPoint;
 
         // BGM再生
-        AudioManager.PlaySound(Common.SoundName.VS_SCENE_BGM);
+        audioManager.PlaySound(Common.SoundName.VS_SCENE_BGM);
     }
 
     /// <summary>
@@ -44,7 +45,7 @@ public class GameDirector : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
-        AudioManager.PlaySound(Common.SoundName.START_GAME_SE);
+        audioManager.PlaySound(Common.SoundName.START_GAME_SE);
 
         //ボール初期位置に配置
         Ball.transform.localPosition = new Vector3(0, 0, 0);
@@ -80,7 +81,7 @@ public class GameDirector : MonoBehaviour
             this.JudagePanel.transform.Rotate(0, 0, 180);
         }
 
-        AudioManager.PlaySound(Common.SoundName.END_GAME_SE);
+        audioManager.PlaySound(Common.SoundName.END_GAME_SE);
         Destroy(this.Ball);
     }
 
@@ -97,7 +98,7 @@ public class GameDirector : MonoBehaviour
     /// </summary>
     public void MoveTitleScene()
     {
-        AudioManager.StopSound();
+        audioManager.StopSound();
         SceneManager.LoadScene(Common.SceneName.TITLE_SCENE_NAME);
     }
 
@@ -106,7 +107,7 @@ public class GameDirector : MonoBehaviour
     /// </summary>
     public void MoveVsScene()
     {
-        AudioManager.StopSound();
+        audioManager.StopSound();
         SceneManager.LoadScene(Common.SceneName.VS_SCENE_NAME);
     }
 
@@ -115,6 +116,6 @@ public class GameDirector : MonoBehaviour
     /// </summary>
     public void PlayTapButtonSE()
     {
-        AudioManager.PlaySound(Common.SoundName.TAP_BUTTON_SE);
+        audioManager.PlaySound(Common.SoundName.TAP_BUTTON_SE);
     }
 }

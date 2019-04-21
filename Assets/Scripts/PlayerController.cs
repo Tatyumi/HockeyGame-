@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
 
     void Start()
     {
-        audioManager = GameDirector.AudioManager;
+        // オーディオマネージャー取得
+        audioManager = AudioManager.Instance;
     }
 
     void Update()
