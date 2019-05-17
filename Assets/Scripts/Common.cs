@@ -28,26 +28,27 @@ namespace Common
     public static class SceneName
     {
         /// <summary>タイトルシーン名</summary>
-        public static string TITLE_SCENE_NAME = "TitleScene";
+        public const string TITLE_SCENE_NAME = "TitleScene";
         /// <summary>VSシーン名</summary>
-        public static string VS_SCENE_NAME = "VsScene";
+        public const string VS_SCENE_NAME = "VsScene";
     }
 
     // オブジェクト名
     public static class ObjectName
     {
         /// <summary>オーディオマネージャー</summary>
-        public static string AUDIO_MANAGER = "AudioManager";
+        public const string AUDIO_MANAGER = "AudioManager";
     }
 
     // 定数
     public static class Constans
     {
         /// <summary>ボール反射時の加速度</summary>
-        public static float BALL_ADD_SPEAD = 2.0f;
+        public const float BALL_ADD_SPEAD = 2.0f;
         /// <summary>プレイヤーのY座標上限値</summary>
-        public static int PLAYER_MAX_YPOSITION = 185;
+        public const int PLAYER_MAX_YPOSITION = 185;
         /// <summary>プレイヤーのY座標下限値</summary>
-        public static int PLAYER_MIN_YPOSITION = -185;
+        public const int PLAYER_MIN_YPOSITION = -185;
     }
+
 }
