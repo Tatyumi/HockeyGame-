@@ -48,6 +48,18 @@ namespace Common
         public const int PLAYER_MAX_YPOSITION = 185;
         /// <summary>プレイヤーのY座標下限値</summary>
         public const int PLAYER_MIN_YPOSITION = -185;
+        /// <summary>ノーマルタイプのキャラサイズ</summary>
+        public const int NORMAL_TYPE_HEIGHT = 80;
+        /// <summary>スピードタイプのキャラサイズ</summary>
+        public const int SPEED_TYPE_HEIGHT = 40;
+        /// <summary>パワータイプのキャラサイズ</summary>
+        public const int POWER_TYPE_HEIGHT = 180;
+        /// <summary>ノーマルタイプのキャラスピード</summary>
+        public const float NORMAL_TYPE_SPEED = 10.0f;
+        /// <summary>スピードタイプのキャラスピード</summary>
+        public const float SPEED_TYPE_SPEED = 30.0f;
+        /// <summary>パワータイプのキャラスピード</summary>
+        public const float POWER_TYPE_SPEED = 6.0f;
     }
 
     // キャラクタータイプ
