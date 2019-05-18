@@ -5,20 +5,77 @@ using Common;
 public class PlayerController : MonoBehaviour, IRefrectableBall
 {
     /// <summary>ゲームディレクター</summary>
-    public GameDirector GameDirector;
+    //public GameDirector GameDirector;
     /// <summary>オーディオマネージャー</summary>
     private AudioManager audioManager;
     /// <summary>移動速度</summary>
-    private float speed = 10.0f;
+    private float speed = 0.0f;
     /// <summary>上に移動ボタン押下判別</summary>
     private bool isMoveUp = false;
     /// <summary>下に移動ボタン押下判別</summary>
     private bool isMoveDown = false;
+    /// <summary>1プレイヤーのタイプ </summary>
+    public static int OnePlayerType;
+    /// <summary>2プレイヤーのタイプ</summary>
+    public static int TwoPlayerType;
 
     void Start()
     {
         // オーディオマネージャー取得
         audioManager = AudioManager.Instance;
+
+        // 選択肢タイプの高さ
+        int selectTypeHeight = 0;
+
+        // オブジェクト名を判別
+        if (this.gameObject.name == "Player1")
+        {
+
+            // キャラタイプの判別
+            if (OnePlayerType == Common.CharaType.NORMAL)
+            {
+                selectTypeHeight = Common.Constans.NORMAL_TYPE_HEIGHT;
+                speed = Common.Constans.NORMAL_TYPE_SPEED;
+            }
+            else if (OnePlayerType == Common.CharaType.SPEED)
+            {
+                selectTypeHeight = Common.Constans.SPEED_TYPE_HEIGHT;
+                speed = Common.Constans.SPEED_TYPE_SPEED;
+            }
+            else if (OnePlayerType == Common.CharaType.POWER)
+            {
+                selectTypeHeight = Common.Constans.POWER_TYPE_HEIGHT;
+                speed = Common.Constans.POWER_TYPE_SPEED;
+            }
+
+        }
+        else if (this.gameObject.name == "Player2")
+        {
+            // キャラタイプの判別
+            if (TwoPlayerType == Common.CharaType.NORMAL)
+            {
+                selectTypeHeight = Common.Constans.NORMAL_TYPE_HEIGHT;
+                speed = Common.Constans.NORMAL_TYPE_SPEED;
+            }
+            else if (TwoPlayerType == Common.CharaType.SPEED)
+            {
+                selectTypeHeight = Common.Constans.SPEED_TYPE_HEIGHT;
+                speed = Common.Constans.SPEED_TYPE_SPEED;
+            }
+            else if (TwoPlayerType == Common.CharaType.POWER)
+            {
+                selectTypeHeight = Common.Constans.POWER_TYPE_HEIGHT;
+                speed = Common.Constans.POWER_TYPE_SPEED;
+            }
+        }
+
+        // プレイヤーオブジェクトのサイズを取得
+        var playerSize = this.gameObject.GetComponent<RectTransform>().sizeDelta;
+        var playerBoxCollderSize = this.gameObject.GetComponent<BoxCollider2D>().size;
+
+        // サイズの代入
+        this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(playerSize.x, selectTypeHeight);
+        this.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(playerBoxCollderSize.x, selectTypeHeight);
     }
 
     void Update()
