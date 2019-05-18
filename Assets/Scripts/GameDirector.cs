@@ -12,8 +12,6 @@ public class GameDirector : MonoBehaviour
     public GameObject CountinuePanel;
     /// <summary>ボール</summary>
     public GameObject Ball;
-    /// <summary>目標ポイント</summary>
-    public int MatchPoint;
     /// <summary>オーディオマネージャー</summary>
     private AudioManager audioManager;
     /// <summary>スタートパネル</summary>
@@ -34,7 +32,7 @@ public class GameDirector : MonoBehaviour
         this.StartPanel.SetActive(true);
 
         // タイトルシーンで指定したポイントを取得
-        MatchPoint = TitleDirector.MatchPoint;
+        //MatchPoint = SettingPanelController.MatchPoint;
 
         // BGM再生
         audioManager.PlaySound(Common.SoundName.VS_SCENE_BGM);
