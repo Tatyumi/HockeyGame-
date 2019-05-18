@@ -26,7 +26,7 @@ public class PointDirector : MonoBehaviour {
         playerPoint = 0;
         player1PointText.text = playerPoint.ToString();
         // タイトルシーンで指定したポイントを取得
-        MatchPoint = TitleDirector.MatchPoint;
+        MatchPoint = SettingPanelController.MatchPoint;
     }
 
     /// <summary>
