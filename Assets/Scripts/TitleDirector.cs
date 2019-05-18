@@ -5,10 +5,10 @@ using Common;
 
 public class TitleDirector : MonoBehaviour {
 
-    /// <summary>目標ポイント</summary>
-    public static int MatchPoint = 0;
     /// <summary>セッティングパネル</summary>
     public GameObject SettingPanel;
+    /// <summary>セレクトキャラパネル</summary>
+    public GameObject SelectCharaPanel;
     /// <summary>オーディオマネージャー</summary>
     private AudioManager audioManager;
 
@@ -23,16 +23,7 @@ public class TitleDirector : MonoBehaviour {
         DontDestroyOnLoad(this);
         audioManager.PlaySound(Common.SoundName.TITLE_SCENE_BGM);
         this.SettingPanel.SetActive(false);
-    }
-    
-    /// <summary>
-    /// 目標ポイントを設定し，ゲームシーンに遷移等のゲーム開始にするための処理
-    /// </summary>
-    /// <param name="selectedPoint">選択した目標ポイント</param>
-    public void StartProcess(int selectedPoint) {
-        MatchPoint = selectedPoint;
-        SceneManager.LoadScene(Common.SceneName.VS_SCENE_NAME);
-        audioManager.StopSound();
+        this.SelectCharaPanel.SetActive(false);
     }
 
     /// <summary>
@@ -41,6 +32,16 @@ public class TitleDirector : MonoBehaviour {
     public void DisplaySettingPanel()
     {
         this.SettingPanel.SetActive(true);
+    }
+
+    /// <summary>
+    /// キャラタイプ選択パネル表示
+    /// </summary>
+    /// <param name="panel">現在表示しているパネル</param>
+    public void DisplaySelectCharaPanel(GameObject panel)
+    {
+        panel.SetActive(false);
+        this.SelectCharaPanel.SetActive(true);
     }
 
     /// <summary>
