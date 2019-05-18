@@ -21,7 +21,6 @@ namespace Common
         public const string TAP_BUTTON_SE = "TapButtonSE";
         /// <summary>ゴールSE名</summary>
         public const string GOAL_SE = "GoalSE";
-
     }
 
     // シーン名
@@ -51,4 +50,14 @@ namespace Common
         public const int PLAYER_MIN_YPOSITION = -185;
     }
 
+    // キャラクタータイプ
+    public static class CharaType
+    {
+        /// <summary>ノーマルタイプ</summary>
+        public const int NORMAL = 1;
+        /// <summary>スピードタイプ</summary>
+        public const int SPEED = 2;
+        /// <summary>パワータイプ</summary>
+        public const int POWER = 3;
+    }
 }
