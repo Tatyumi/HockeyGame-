@@ -48,9 +48,6 @@ public class SelectCharaPanelController : MonoBehaviour
     /// <param name="charaType"></param>
     public void SetCharaType(int charaType)
     {
-        // SE再生
-        audioManager.PlaySound(Common.SoundName.TAP_BUTTON_SE);
-
         // 選択しているプレイヤーの判別
         if (selectMode == (int)SelectMode.OnePlayer)
         {
@@ -76,5 +73,8 @@ public class SelectCharaPanelController : MonoBehaviour
             // 音の停止
             audioManager.StopSound();
         }
+
+        // SE再生
+        audioManager.PlaySound(Common.SoundName.TAP_BUTTON_SE);
     }
 }
