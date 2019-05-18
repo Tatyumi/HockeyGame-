@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
     public static int OnePlayerType;
     /// <summary>2プレイヤーのタイプ</summary>
     public static int TwoPlayerType;
+    /// <summary>最大Y座標</summary>
+    private float maxYPosition = 0.0f;
+    /// <summary>最小Y座標</summary>
+    private float minYPosition = 0.0f;
 
     void Start()
     {
@@ -82,6 +86,10 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
         // サイズの代入
         this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(playerSize.x, selectTypeHeight);
         this.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(playerBoxCollderSize.x, selectTypeHeight);
+
+        // 移動できる最大、最小のY座標を取得
+        maxYPosition = Screen.height / 2 - selectTypeHeight / 2;
+        minYPosition = maxYPosition * -1;
     }
 
     void Update()
@@ -99,13 +107,13 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
         }
 
         //プレイヤーのY座標が既定の範囲内か判別
-        if (this.transform.localPosition.y >= Common.Constans.PLAYER_MAX_YPOSITION)
+        if (this.transform.localPosition.y >= maxYPosition)
         {
-            this.transform.localPosition = new Vector3(transform.localPosition.x, Common.Constans.PLAYER_MAX_YPOSITION - 5, 0);
+            this.transform.localPosition = new Vector3(transform.localPosition.x, maxYPosition, 0);
         }
-        else if (this.transform.localPosition.y <= Common.Constans.PLAYER_MIN_YPOSITION)
+        else if (this.transform.localPosition.y <= minYPosition)
         {
-            this.transform.localPosition = new Vector3(transform.localPosition.x, Common.Constans.PLAYER_MIN_YPOSITION + 5, 0);
+            this.transform.localPosition = new Vector3(transform.localPosition.x, minYPosition, 0);
         }
     }
 

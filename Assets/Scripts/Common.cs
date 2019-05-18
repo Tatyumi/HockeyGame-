@@ -44,10 +44,6 @@ namespace Common
     {
         /// <summary>ボール反射時の加速度</summary>
         public const float BALL_ADD_SPEAD = 2.0f;
-        /// <summary>プレイヤーのY座標上限値</summary>
-        public const int PLAYER_MAX_YPOSITION = 185;
-        /// <summary>プレイヤーのY座標下限値</summary>
-        public const int PLAYER_MIN_YPOSITION = -185;
         /// <summary>ノーマルタイプのキャラサイズ</summary>
         public const int NORMAL_TYPE_HEIGHT = 80;
         /// <summary>スピードタイプのキャラサイズ</summary>
