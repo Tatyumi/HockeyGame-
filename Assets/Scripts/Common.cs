@@ -52,14 +52,14 @@ namespace Common
         public const int NORMAL_TYPE_HEIGHT = 80;
         /// <summary>スピードタイプのキャラサイズ</summary>
         public const int SPEED_TYPE_HEIGHT = 40;
-        /// <summary>パワータイプのキャラサイズ</summary>
-        public const int POWER_TYPE_HEIGHT = 180;
+        /// <summary>ワイドタイプのキャラサイズ</summary>
+        public const int WIDE_TYPE_HEIGHT = 180;
         /// <summary>ノーマルタイプのキャラスピード</summary>
         public const float NORMAL_TYPE_SPEED = 10.0f;
         /// <summary>スピードタイプのキャラスピード</summary>
         public const float SPEED_TYPE_SPEED = 30.0f;
-        /// <summary>パワータイプのキャラスピード</summary>
-        public const float POWER_TYPE_SPEED = 6.0f;
+        /// <summary>ワイドタイプのキャラスピード</summary>
+        public const float WIDE_TYPE_SPEED = 6.0f;
     }
 
     // キャラクタータイプ
@@ -69,7 +69,7 @@ namespace Common
         public const int NORMAL = 1;
         /// <summary>スピードタイプ</summary>
         public const int SPEED = 2;
-        /// <summary>パワータイプ</summary>
-        public const int POWER = 3;
+        /// <summary>ワイドタイプ</summary>
+        public const int WIDE = 3;
     }
 }

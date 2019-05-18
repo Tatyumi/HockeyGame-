@@ -34,18 +34,21 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
             // キャラタイプの判別
             if (OnePlayerType == Common.CharaType.NORMAL)
             {
+                // ノーマルタイプの場合
                 selectTypeHeight = Common.Constans.NORMAL_TYPE_HEIGHT;
                 speed = Common.Constans.NORMAL_TYPE_SPEED;
             }
             else if (OnePlayerType == Common.CharaType.SPEED)
             {
+                // スピードタイプの場合
                 selectTypeHeight = Common.Constans.SPEED_TYPE_HEIGHT;
                 speed = Common.Constans.SPEED_TYPE_SPEED;
             }
-            else if (OnePlayerType == Common.CharaType.POWER)
+            else if (OnePlayerType == Common.CharaType.WIDE)
             {
-                selectTypeHeight = Common.Constans.POWER_TYPE_HEIGHT;
-                speed = Common.Constans.POWER_TYPE_SPEED;
+                // ワイドタイプの場合
+                selectTypeHeight = Common.Constans.WIDE_TYPE_HEIGHT;
+                speed = Common.Constans.WIDE_TYPE_SPEED;
             }
 
         }
@@ -54,18 +57,21 @@ public class PlayerController : MonoBehaviour, IRefrectableBall
             // キャラタイプの判別
             if (TwoPlayerType == Common.CharaType.NORMAL)
             {
+                // ノーマルタイプの場合
                 selectTypeHeight = Common.Constans.NORMAL_TYPE_HEIGHT;
                 speed = Common.Constans.NORMAL_TYPE_SPEED;
             }
             else if (TwoPlayerType == Common.CharaType.SPEED)
             {
+                // スピードタイプの場合
                 selectTypeHeight = Common.Constans.SPEED_TYPE_HEIGHT;
                 speed = Common.Constans.SPEED_TYPE_SPEED;
             }
-            else if (TwoPlayerType == Common.CharaType.POWER)
+            else if (TwoPlayerType == Common.CharaType.WIDE)
             {
-                selectTypeHeight = Common.Constans.POWER_TYPE_HEIGHT;
-                speed = Common.Constans.POWER_TYPE_SPEED;
+                // ワイドタイプの場合
+                selectTypeHeight = Common.Constans.WIDE_TYPE_HEIGHT;
+                speed = Common.Constans.WIDE_TYPE_SPEED;
             }
         }
 
