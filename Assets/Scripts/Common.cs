@@ -45,13 +45,13 @@ namespace Common
         /// <summary>ボール反射時の加速度</summary>
         public const float BALL_ADD_SPEAD = 2.0f;
         /// <summary>ノーマルタイプのキャラサイズ</summary>
-        public const int NORMAL_TYPE_HEIGHT = 80;
+        public const int NORMAL_TYPE_HEIGHT = 160;
         /// <summary>スピードタイプのキャラサイズ</summary>
-        public const int SPEED_TYPE_HEIGHT = 40;
+        public const int SPEED_TYPE_HEIGHT = 100;
         /// <summary>ワイドタイプのキャラサイズ</summary>
-        public const int WIDE_TYPE_HEIGHT = 180;
+        public const int WIDE_TYPE_HEIGHT = 360;
         /// <summary>ノーマルタイプのキャラスピード</summary>
-        public const float NORMAL_TYPE_SPEED = 10.0f;
+        public const float NORMAL_TYPE_SPEED = 15.0f;
         /// <summary>スピードタイプのキャラスピード</summary>
         public const float SPEED_TYPE_SPEED = 30.0f;
         /// <summary>ワイドタイプのキャラスピード</summary>
